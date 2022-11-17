@@ -1,0 +1,197 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 0 24px;
+  color: #1a1a1a;
+  font-family: Roboto;
+  animation: gradient 10s infinite alternate linear;
+}
+
+@media (width >= 500px) {
+  body {
+    padding: 0;
+  }
+}
+
+@keyframes blobz {
+  100% {
+    translate: 30% -20%;
+  }
+}
+
+.background {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: blobz 5s infinite alternate linear;
+}
+
+.background > div {
+  position: fixed;
+  width: 760px;
+  height: 760px;
+}
+
+@media (width >= 800px) {
+  .background > div {
+    width: 50;
+    height: 760px;
+  }
+}
+
+.overlay {
+  position: fixed;
+  z-index: 2;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgb(255 255 255 / 40%);
+  backdrop-filter: blur(60px);
+}
+
+.background :nth-child(1) {
+  top: -30vmax;
+  left: -30vmax;
+}
+
+.background :nth-child(2) {
+  bottom: -30vmax;
+  right: -25vmax;
+}
+
+.login {
+  position: fixed;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 90%;
+  padding: 70px 30px 44px;
+  border-radius: 22px;
+  background: #ffffff;
+  text-align: center;
+  box-shadow: 0 50px 100px rgb(0 0 0 / 14%);
+}
+
+@media (width >= 450px) {
+  .login {
+    width: 380px;
+  }
+}
+
+.login > img {
+  margin: 0 auto 16px;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  padding: 4px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.login > h2 {
+  font-size: 36px;
+  font-weight: 400;
+  margin: 0 0 30px;
+}
+
+.login > h3 {
+  color: rgba(0, 0, 0, 0.38);
+  margin: 0 0 4px;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.login-form {
+  display: grid;
+  gap: 20px;
+  place-items: center;
+  width: 100%;
+  margin: 0;
+}
+
+.textbox {
+  width: 100%;
+  position: relative;
+}
+
+.textbox label {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  translate: 0 -50%;
+  color: rgba(0, 0, 0, 0.38);
+  transition: 0.3s;
+}
+
+.textbox :is(input:focus, input:valid) ~ label {
+  scale: 0.8;
+  translate: -42px -38px;
+  padding: 0 8px;
+  background: #ffffff;
+}
+
+.textbox span {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  translate: 0 -50%;
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.login-form input,
+.login-form button {
+  width: 100%;
+  height: 60px;
+  outline: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+.login-form input {
+  background: transparent;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  padding: 0 20px 0 50px;
+  color: inherit;
+}
+
+.login-form input:focus {
+  border-color: #8f44fd;
+}
+
+.login-form :is(input:focus, input:valid) ~ span {
+  color: #1a1a1a;
+}
+
+.login-form button {
+  cursor: pointer;
+  background: #8f44fd;
+  color: #f9f9f9;
+  border: 0;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.login-form a {
+  color: #8f44fd;
+  font-size: 16px;
+  text-align: left;
+  text-decoration: none;
+}
