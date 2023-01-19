@@ -9,25 +9,26 @@
       <h2>Login</h2>
       <h3>Enter your credentials</h3>
       <form class="login-form">
-        <div class="username">
-          <input
-            spellcheck="false"
-            class="control"
-            type="text"
-            placeholder="Username"
-            onkeyup="handleChange(event)"
-            onkeydown="handleStartTyping()"
-          />
-          <div id="spinner" class="spinner"></div>
-        </div>
-        <div id="alert" class="alert">Username already exists</div>
         <input
           spellcheck="false"
           class="control"
-          id="password"
-          type="password"
-          placeholder="Password"
+          type="text"
+          placeholder="Username"
         />
+        <div class="password">
+          <input
+            spellcheck="false"
+            class="control"
+            id="password"
+            type="password"
+            placeholder="Password"
+          />
+          <button
+            class="toggle"
+            type="button"
+            onclick="togglePassword(this)"
+          ></button>
+        </div>
         <button class="control" type="button">LOGIN</button>
       </form>
     </div>

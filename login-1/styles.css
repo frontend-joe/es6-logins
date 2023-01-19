@@ -18,9 +18,9 @@ body {
   display: grid;
   place-items: center;
   margin: 0;
-  background-image: url("bbblurry.svg");
+  background-image: url("background.svg");
   background-repeat: no-repeat;
-  background-size: 200vh;
+  background-size: cover;
   font-family: "Euclid Circular A";
   color: #3a334e;
   animation: rotate 1s infinite alternate linear;
@@ -41,7 +41,6 @@ button {
   padding: 0 16px;
   background: #edeaf7;
   color: #5a4f79;
-  margin: 8px 0;
   font-family: inherit;
   font-size: 16px;
   transition: 0.4s;
@@ -72,6 +71,7 @@ button {
   width: 100%;
   margin: 0;
   display: grid;
+  gap: 16px;
 }
 
 .login-form input.control::placeholder {
@@ -94,43 +94,23 @@ button {
   transition: all 0.375s;
 }
 
-.username {
+.password {
   position: relative;
 }
 
-@keyframes spin {
-  100% {
-    rotate: 1turn;
-  }
-}
-
-.spinner {
+.toggle {
   position: absolute;
   top: 50%;
   right: 16px;
   translate: 0 -50%;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: 3px solid #ccc9e1;
-  border-top-color: #8f44fd;
-  opacity: 0;
-  animation: spin 1s infinite linear;
+  width: 30px;
+  height: 30px;
+  background-image: url("show.svg");
+  background-size: 85%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.spinner.visible {
-  opacity: 1;
-}
-
-.alert {
-  overflow: hidden;
-  text-align: left;
-  padding: 0 16px;
-  color: #ff3e72;
-  height: 0;
-  transition: 0.3s;
-}
-
-.alert.visible {
-  height: 32px;
+.toggle.showing {
+  background-image: url("hide.svg");
 }
